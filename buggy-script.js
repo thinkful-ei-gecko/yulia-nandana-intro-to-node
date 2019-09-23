@@ -1,6 +1,8 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const debug = require('debug');
+debug.enable('*');
 
 const source = process.argv[2];
 const target = process.argv[3];
@@ -26,7 +28,7 @@ linesInSource.forEach(line => {
   // write the file and it's contents
   fs.writeFileSync(
     newFilePath,
-    contentArr,
+    contentArr.join(' '),
     { flag: 'w+', encoding: 'utf-8' }
   );
-});npm 
+});
